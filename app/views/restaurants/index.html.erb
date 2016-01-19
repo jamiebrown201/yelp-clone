@@ -1,3 +1,5 @@
+
+<break/>
 <% if @restaurants.all.any? %>
 <% @restaurants.all.each do |restaurant| %>
 <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
@@ -17,6 +19,12 @@
     <li>
       <%= review.thoughts %>, <strong><%= review.rating %></strong>/5
     </li>
+    <div
+      class="fb-like"
+      data-share="true"
+      data-width="450"
+      data-show-faces="true">
+  </div>
   <% end %>
 </ul>
 <% else %>

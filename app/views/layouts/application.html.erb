@@ -6,8 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag "main" %>
+  <%= javascript_include_tag "application" %>
 </head>
 <body>
+  <header>
+    <% if user_signed_in? %>
+      <p><%= link_to "Sign out", destroy_user_session_path, method: :delete %></p>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %>
+      <%= link_to "Sign up", new_user_registration_path %>
+    <% end %>
+  </header>
   <!-- <%= notice %> -->
 
 
